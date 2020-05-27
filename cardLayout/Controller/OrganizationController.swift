@@ -84,6 +84,7 @@ extension OrganizationController{
     
         } else {
             // Fallback on earlier versions
+            let test: Int = 4
         }
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: greyColor]
         self.title = "Exchanger"
