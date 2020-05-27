@@ -7,6 +7,8 @@ final class OrganizationController: UIViewController {
     
     @IBOutlet weak var organizationsCollectionView: UICollectionView!
     
+    let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
+    
     var arrayTest: [Organization] = []
     let cellIdentifier = "organizationID"
     let url = URL(string: "http://resources.finance.ua/ua/public/currency-cash.json")
@@ -75,8 +77,16 @@ extension OrganizationController{
     }
     
     func setUpNavigationBar() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Medium", size: 17)!, NSAttributedString.Key.foregroundColor:UIColor.black]
-        self.title = "Exhanger"
+        
+    
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 34)!, NSAttributedString.Key.foregroundColor: greyColor]
+    
+        } else {
+            // Fallback on earlier versions
+        }
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: greyColor]
+        self.title = "Exchanger"
     }
     
 }

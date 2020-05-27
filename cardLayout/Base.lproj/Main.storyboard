@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rzY-Ba-O2R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rzY-Ba-O2R">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Converter lab-->
+        <!--Exchanger-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="OrganizationController" customModule="Converter_lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OrganizationController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Converter lab" id="1yr-2y-WVm"/>
+                    <navigationItem key="navigationItem" title="Exchanger" id="1yr-2y-WVm">
+                        <barButtonItem key="rightBarButtonItem" image="star.slash.fill" catalog="system" landscapeImage="star.slash.fill" largeContentSizeImage="star" style="plain" id="M7k-qx-5HZ">
+                            <color key="tintColor" red="0.25098039215686274" green="0.25490196078431371" blue="0.25882352941176467" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="organizationsCollectionView" destination="F0h-Aj-giL" id="Zjp-zo-e9z"/>
                         <segue destination="A6S-QD-DDk" kind="show" identifier="organizationInfo" id="Hmt-Bm-3Rv"/>
@@ -54,7 +58,7 @@
         <!--Organization Detailed Controller-->
         <scene sceneID="JHZ-0a-bFD">
             <objects>
-                <viewController id="A6S-QD-DDk" customClass="OrganizationDetailedController" customModule="Converter_lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A6S-QD-DDk" customClass="OrganizationDetailedController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLQ-jO-Fd9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +132,7 @@ e-mail: ccd@alfabank.kiev.ua</string>
                                 <rect key="frame" x="0.0" y="420" width="375" height="358"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyID" id="NK7-2c-lx3" customClass="CurrencyCell" customModule="Converter_lab" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyID" id="NK7-2c-lx3" customClass="CurrencyCell" customModule="Exchanger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NK7-2c-lx3" id="4Fr-bP-BmJ">
@@ -275,5 +279,7 @@ e-mail: ccd@alfabank.kiev.ua</string>
     <resources>
         <image name="Down" width="96" height="96"/>
         <image name="Up" width="96" height="96"/>
+        <image name="star" width="27" height="25"/>
+        <image name="star.slash.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

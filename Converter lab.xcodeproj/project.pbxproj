@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CC40F20247D66B80073151F /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */; };
+		3CC40F22247D66C70073151F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */; };
 		3D1A686623FC7CD60055260F /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A686523FC7CD60055260F /* UIView+Nib.swift */; };
 		3D1A686823FC7CEB0055260F /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A686723FC7CEB0055260F /* UICollectionView+Reusable.swift */; };
 		3D1A686A23FC7D010055260F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A686923FC7D010055260F /* UITableView+Reusable.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		3D1A686523FC7CD60055260F /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		3D1A686723FC7CEB0055260F /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		3D1A686923FC7D010055260F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		6A2DEC6823EF0D2E00702578 /* OrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 		6A2DEC6A23EF100D00702578 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		6A2DEC6C23EF103900702578 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		9040A6231FAE741200D89A53 /* Converter lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Converter lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9040A6231FAE741200D89A53 /* Exchanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exchanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9040A6261FAE741200D89A53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9040A62B1FAE741200D89A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9040A6301FAE741200D89A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CC40F1E247D66910073151F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */,
+				3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3D1A686423FC7C8F0055260F /* Extension - ready */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +122,7 @@
 		9040A6241FAE741200D89A53 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9040A6231FAE741200D89A53 /* Converter lab.app */,
+				9040A6231FAE741200D89A53 /* Exchanger.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +138,7 @@
 				9040A62A1FAE741200D89A53 /* Main.storyboard */,
 				9040A62F1FAE741200D89A53 /* LaunchScreen.storyboard */,
 				9040A6321FAE741200D89A53 /* Info.plist */,
+				3CC40F1E247D66910073151F /* Fonts */,
 			);
 			path = cardLayout;
 			sourceTree = "<group>";
@@ -148,7 +162,7 @@
 			packageProductDependencies = (
 			);
 			productName = cardLayout;
-			productReference = 9040A6231FAE741200D89A53 /* Converter lab.app */;
+			productReference = 9040A6231FAE741200D89A53 /* Exchanger.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -158,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Владислав Мартяк";
 				TargetAttributes = {
 					9040A6221FAE741200D89A53 = {
@@ -193,8 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9040A6311FAE741200D89A53 /* LaunchScreen.storyboard in Resources */,
+				3CC40F22247D66C70073151F /* Gilroy-Regular.ttf in Resources */,
 				6A091BA223EF712B00880CE9 /* Media.xcassets in Resources */,
 				3D1A686C23FC84610055260F /* OrganizationCell.xib in Resources */,
+				3CC40F20247D66B80073151F /* Gilroy-SemiBold.ttf in Resources */,
 				9040A62C1FAE741200D89A53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +274,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -265,6 +282,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -316,6 +334,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -323,6 +342,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -361,7 +381,7 @@
 				INFOPLIST_FILE = cardLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cardLayout.VM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Exchanger;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -376,7 +396,7 @@
 				INFOPLIST_FILE = cardLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cardLayout.VM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Exchanger;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

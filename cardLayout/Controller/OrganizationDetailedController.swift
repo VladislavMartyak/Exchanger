@@ -35,7 +35,7 @@ class OrganizationDetailedController: UIViewController {
     
     func setUpNavigationBar() {
          self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 74/255, green: 144/255, blue: 226/255, alpha: 1)
-         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Medium", size: 17)!, NSAttributedString.Key.foregroundColor:UIColor.white]
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor:UIColor.white]
         self.title = org?.title
      }
     
