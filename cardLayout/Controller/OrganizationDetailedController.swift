@@ -4,10 +4,13 @@ class OrganizationDetailedController: UIViewController {
     
     let currencyIndentifier = "currencyID"
     
+    let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
+    
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var currenciesTableView: UITableView!
     @IBOutlet weak var organizationLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var org: Organization?
     
@@ -34,8 +37,8 @@ class OrganizationDetailedController: UIViewController {
     }
     
     func setUpNavigationBar() {
-         self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 74/255, green: 144/255, blue: 226/255, alpha: 1)
-         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: greyColor]
         self.title = org?.title
      }
     
@@ -54,6 +57,13 @@ class OrganizationDetailedController: UIViewController {
         }
     }
     
+    @IBAction func share (_ sender: Any){
+        print("tapped share")
+        let items: [Any] = ["\(org?.title ?? "") знаходиться на \(org?.address ?? ""), телефон: \(org?.phone ?? "")"]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
+    
 }
 
 
@@ -66,12 +76,20 @@ extension OrganizationDetailedController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentCurrency: CurrencyFull = currencies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: currencyIndentifier, for: indexPath) as! CurrencyCell
-        // Аналог пройоб 2
+        // Поправити
         cell.setup(shortName: currentCurrency.shortName, fullName: currentCurrency.fullName, ask: currentCurrency.ask, bid: currentCurrency.bid)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tapped on currency")
+        let currentCurrency: CurrencyFull = currencies[indexPath.row]
+        
+        let askDouble = Double(currentCurrency.ask)
+        let bidDouble = Double(currentCurrency.bid)
+        let items: [Any] = ["\(currentCurrency.fullName): \(askDouble ?? 0)/\(bidDouble ?? 0) у \(org?.title ?? "")"]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
         currenciesTableView.deselectRow(at: indexPath, animated: true)
     }
 

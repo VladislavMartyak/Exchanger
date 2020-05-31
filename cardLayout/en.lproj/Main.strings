@@ -1,0 +1,27 @@
+
+/* Class = "UINavigationItem"; title = "Exchanger"; ObjectID = "1yr-2y-WVm"; */
+"1yr-2y-WVm.title" = "Exchanger";
+
+/* Class = "UILabel"; text = "USD"; ObjectID = "4hy-CH-eoy"; */
+"4hy-CH-eoy.text" = "USD";
+
+/* Class = "UILabel"; text = "24.2391"; ObjectID = "6B1-ff-fVx"; */
+"6B1-ff-fVx.text" = "24.2391";
+
+/* Class = "UILabel"; text = "Долар США"; ObjectID = "8e1-Th-Twe"; */
+"8e1-Th-Twe.text" = "Долар США";
+
+/* Class = "UILabel"; text = "Oфіційний сайт:\nwww.alfabank.ua/ua\nІнтернет-банкінг: My Alfa-Bank\nАдреса: вул.Минайська, 14-Б\nГаряча лінія: 0 800 50 500 50\n(цілодобово без вихідних)\nТелефон: 044 93 098 34\n(дзвінки з-за кордону)\ne-mail: ccd@alfabank.kiev.ua"; ObjectID = "EBG-Et-IE0"; */
+"EBG-Et-IE0.text" = "Oфіційний сайт:\nwww.alfabank.ua/ua\nІнтернет-банкінг: My Alfa-Bank\nАдреса: вул.Минайська, 14-Б\nГаряча лінія: 0 800 50 500 50\n(цілодобово без вихідних)\nТелефон: 044 93 098 34\n(дзвінки з-за кордону)\ne-mail: ccd@alfabank.kiev.ua";
+
+/* Class = "UILabel"; text = "Назва Валюти"; ObjectID = "FgF-v5-dQp"; */
+"FgF-v5-dQp.text" = "Назва Валюти";
+
+/* Class = "UILabel"; text = "25.0121"; ObjectID = "f2i-9E-Ocm"; */
+"f2i-9E-Ocm.text" = "25.0121";
+
+/* Class = "UILabel"; text = "Organization"; ObjectID = "fqv-Kh-v99"; */
+"fqv-Kh-v99.text" = "Organization";
+
+/* Class = "UILabel"; text = "Покупка / Продаж"; ObjectID = "sgR-IO-D44"; */
+"sgR-IO-D44.text" = "Покупка / Продаж";

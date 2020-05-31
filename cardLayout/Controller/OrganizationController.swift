@@ -1,11 +1,14 @@
 import UIKit
 import Network
-
+import UserNotifications
+import FirebaseCrashlytics
 
 
 final class OrganizationController: UIViewController {
     
+   
     @IBOutlet weak var organizationsCollectionView: UICollectionView!
+    @IBOutlet weak var startButton: UIBarButtonItem!
     
     let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
     
@@ -17,6 +20,27 @@ final class OrganizationController: UIViewController {
         setUpNavigationBar()
         setupCollectionView()
         downloadJSON()
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            //Reuqest
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Оновлення курсу валют"
+        content.body = "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!"
+        
+        let date = Date().addingTimeInterval(10)
+        let dateComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+        
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            //Check
+        }
     }
     
     private func setupCollectionView() {
@@ -32,6 +56,13 @@ final class OrganizationController: UIViewController {
             let obj = arrayTest[indexPath.row]
             newViewController.org = obj
         }
+    }
+    
+    
+    @IBAction func showStarredlist(_ sender: Any){
+        let alert = UIAlertController(title: "Чекайте оновлень", message: "Дана функція уже у розробці, тому слідкуйте за новинами, щоб бути першим, хто про це дізнається!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Зрозуміло", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 
@@ -84,13 +115,16 @@ extension OrganizationController{
     
         } else {
             // Fallback on earlier versions
-            let test: Int = 4
         }
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: greyColor]
         self.title = "Exchanger"
     }
     
+    
+    
 }
+
+
 
 //MARK: - Extensions
 

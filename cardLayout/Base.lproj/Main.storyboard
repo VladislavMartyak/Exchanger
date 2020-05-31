@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gilroy-SemiBold.ttf">
+            <string>Gilroy-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Exchanger-->
         <scene sceneID="tne-QT-ifu">
@@ -44,10 +49,14 @@
                     <navigationItem key="navigationItem" title="Exchanger" id="1yr-2y-WVm">
                         <barButtonItem key="rightBarButtonItem" image="star.slash.fill" catalog="system" landscapeImage="star.slash.fill" largeContentSizeImage="star" style="plain" id="M7k-qx-5HZ">
                             <color key="tintColor" red="0.25098039215686274" green="0.25490196078431371" blue="0.25882352941176467" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="showStarredlist:" destination="BYZ-38-t0r" id="yKv-xc-05v"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="organizationsCollectionView" destination="F0h-Aj-giL" id="Zjp-zo-e9z"/>
+                        <outlet property="startButton" destination="M7k-qx-5HZ" id="fgQ-Ac-3pQ"/>
                         <segue destination="A6S-QD-DDk" kind="show" identifier="organizationInfo" id="Hmt-Bm-3Rv"/>
                     </connections>
                 </viewController>
@@ -64,73 +73,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-Kh-v99">
-                                <rect key="frame" x="24" y="112" width="256" height="40"/>
+                                <rect key="frame" x="24" y="111" width="181" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="ZiM-Hz-Nds"/>
-                                    <constraint firstAttribute="height" constant="40" id="fIB-jm-Za1"/>
+                                    <constraint firstAttribute="height" constant="60" id="g7G-jn-81Z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="30"/>
+                                <color key="textColor" red="0.25098039220000001" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D8G-Zg-7Ss">
-                                <rect key="frame" x="292" y="112" width="55" height="40"/>
+                                <rect key="frame" x="255" y="111" width="96" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bfX-le-cLT"/>
-                                    <constraint firstAttribute="width" constant="55" id="zux-uS-cEj"/>
+                                    <constraint firstAttribute="width" constant="96" id="jeh-SP-6rI"/>
+                                    <constraint firstAttribute="height" constant="60" id="mPX-sc-lCK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBG-Et-IE0">
-                                <rect key="frame" x="24" y="160" width="328" height="168"/>
+                                <rect key="frame" x="24" y="190" width="328" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="7FW-cR-8lL"/>
+                                </constraints>
                                 <string key="text">Oфіційний сайт:
 www.alfabank.ua/ua
 Інтернет-банкінг: My Alfa-Bank
 Адреса: вул.Минайська, 14-Б
-Гаряча лінія: 0 800 50 500 50
-(цілодобово без вихідних)
+Місто: Миколаїв Регіон: Миколаївська область
+Телефон: 0 800 50 500 50
 Телефон: 044 93 098 34
-(дзвінки з-за кордону)
-e-mail: ccd@alfabank.kiev.ua</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+(дзвінки з-за кордону)</string>
+                                <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="16"/>
+                                <color key="textColor" red="0.25098039220000001" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-l3-elU">
-                                <rect key="frame" x="0.0" y="352" width="375" height="60"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва Валюти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-v5-dQp">
-                                        <rect key="frame" x="24" y="20" width="108" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="108" id="44m-SU-ptX"/>
-                                            <constraint firstAttribute="height" constant="18" id="AeB-ct-K53"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Покупка / Продаж" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-IO-D44">
-                                        <rect key="frame" x="213" y="20" width="138" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="LW6-9L-wmA"/>
-                                            <constraint firstAttribute="width" constant="138" id="nWB-A3-qrh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4te-nn-u90"/>
-                                    <constraint firstItem="FgF-v5-dQp" firstAttribute="top" secondItem="0eq-l3-elU" secondAttribute="top" constant="20" id="HRf-Tl-WPG"/>
-                                    <constraint firstItem="FgF-v5-dQp" firstAttribute="leading" secondItem="0eq-l3-elU" secondAttribute="leading" constant="24" id="HpI-fw-iQC"/>
-                                    <constraint firstAttribute="trailing" secondItem="sgR-IO-D44" secondAttribute="trailing" constant="24" id="KmL-hd-84Q"/>
-                                    <constraint firstItem="sgR-IO-D44" firstAttribute="top" secondItem="0eq-l3-elU" secondAttribute="top" constant="20" id="wF7-m9-MLh"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4y-k0-yve">
-                                <rect key="frame" x="0.0" y="420" width="375" height="358"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="438" width="375" height="340"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyID" id="NK7-2c-lx3" customClass="CurrencyCell" customModule="Exchanger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
@@ -145,7 +127,7 @@ e-mail: ccd@alfabank.kiev.ua</string>
                                                         <constraint firstAttribute="width" constant="40" id="Jix-Ln-kal"/>
                                                         <constraint firstAttribute="height" constant="20" id="Ue0-BF-085"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="16"/>
                                                     <color key="textColor" red="0.25490196079999999" green="0.25098039220000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -155,60 +137,62 @@ e-mail: ccd@alfabank.kiev.ua</string>
                                                         <constraint firstAttribute="width" constant="200" id="Gjh-Ww-Egw"/>
                                                         <constraint firstAttribute="height" constant="20" id="qyS-xF-Jrf"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="16"/>
+                                                    <color key="textColor" red="0.52549019607843139" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.2391" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B1-ff-fVx">
-                                                    <rect key="frame" x="299" y="12" width="56" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.2391" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B1-ff-fVx">
+                                                    <rect key="frame" x="295" y="12" width="56" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="HPa-9t-NiG"/>
                                                         <constraint firstAttribute="width" constant="56" id="epc-P7-Zr9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.078431372550000003" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.0121" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2i-9E-Ocm">
-                                                    <rect key="frame" x="299" y="32" width="56" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.0121" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2i-9E-Ocm">
+                                                    <rect key="frame" x="295" y="32" width="56" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="56" id="OUE-1i-EMp"/>
                                                         <constraint firstAttribute="height" constant="12" id="zEn-vJ-KAM"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="14"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.74901960779999999" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down" translatesAutoresizingMaskIntoConstraints="NO" id="sLs-ov-vTV">
-                                                    <rect key="frame" x="279" y="8" width="20" height="20"/>
+                                                    <rect key="frame" x="275" y="8" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="fzt-RS-oEu"/>
                                                         <constraint firstAttribute="height" constant="20" id="hFZ-3i-CTS"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Up" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-7h-d3o">
-                                                    <rect key="frame" x="279" y="29" width="20" height="20"/>
+                                                    <rect key="frame" x="275" y="29" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="DdQ-sj-IUa"/>
                                                         <constraint firstAttribute="width" constant="20" id="xuJ-XD-PVW"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="4hy-CH-eoy" firstAttribute="leading" secondItem="4Fr-bP-BmJ" secondAttribute="leading" constant="24" id="20m-ll-PKC"/>
                                                 <constraint firstItem="8e1-Th-Twe" firstAttribute="leading" secondItem="4hy-CH-eoy" secondAttribute="trailing" constant="10" id="7YR-6e-8UB"/>
-                                                <constraint firstAttribute="trailing" secondItem="6B1-ff-fVx" secondAttribute="trailing" constant="20" id="cTv-ge-ZQF"/>
+                                                <constraint firstAttribute="trailing" secondItem="6B1-ff-fVx" secondAttribute="trailing" constant="24" id="cTv-ge-ZQF"/>
                                                 <constraint firstItem="sLs-ov-vTV" firstAttribute="top" secondItem="4Fr-bP-BmJ" secondAttribute="top" constant="8" id="cie-uy-0vT"/>
                                                 <constraint firstItem="6B1-ff-fVx" firstAttribute="leading" secondItem="sLs-ov-vTV" secondAttribute="trailing" id="gHR-AI-7Ud"/>
                                                 <constraint firstItem="f2i-9E-Ocm" firstAttribute="leading" secondItem="XTw-7h-d3o" secondAttribute="trailing" id="gJG-6n-YFZ"/>
                                                 <constraint firstItem="4hy-CH-eoy" firstAttribute="top" secondItem="4Fr-bP-BmJ" secondAttribute="top" constant="20" id="hye-qY-ob6"/>
                                                 <constraint firstItem="f2i-9E-Ocm" firstAttribute="top" secondItem="6B1-ff-fVx" secondAttribute="bottom" constant="8" symbolic="YES" id="imt-6v-lyK"/>
                                                 <constraint firstItem="XTw-7h-d3o" firstAttribute="top" secondItem="sLs-ov-vTV" secondAttribute="bottom" constant="1" id="kjx-UQ-lvA"/>
-                                                <constraint firstAttribute="trailing" secondItem="f2i-9E-Ocm" secondAttribute="trailing" constant="20" id="nXu-pt-6a8"/>
+                                                <constraint firstAttribute="trailing" secondItem="f2i-9E-Ocm" secondAttribute="trailing" constant="24" id="nXu-pt-6a8"/>
                                                 <constraint firstItem="6B1-ff-fVx" firstAttribute="top" secondItem="4Fr-bP-BmJ" secondAttribute="top" constant="12" id="nzp-3Y-gLR"/>
                                                 <constraint firstItem="8e1-Th-Twe" firstAttribute="top" secondItem="4Fr-bP-BmJ" secondAttribute="top" constant="20" id="u9x-8c-qlT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="currencyAskLabel" destination="6B1-ff-fVx" id="VkV-Nf-LDc"/>
                                             <outlet property="currencyBidLabel" destination="f2i-9E-Ocm" id="FdQ-ZT-vAR"/>
@@ -218,23 +202,46 @@ e-mail: ccd@alfabank.kiev.ua</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eq-l3-elU">
+                                <rect key="frame" x="0.0" y="382" width="375" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Назва Валюти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-v5-dQp">
+                                        <rect key="frame" x="24" y="19" width="108" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="16"/>
+                                        <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Покупка / Продаж" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-IO-D44">
+                                        <rect key="frame" x="210" y="19" width="141" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="16"/>
+                                        <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="T5S-pj-AUj"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jhs-dg-UTV" firstAttribute="trailing" secondItem="EBG-Et-IE0" secondAttribute="trailing" constant="23" id="3Bt-UP-LFG"/>
-                            <constraint firstItem="EBG-Et-IE0" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" constant="24" id="A8G-eg-4gR"/>
-                            <constraint firstItem="jhs-dg-UTV" firstAttribute="trailing" secondItem="0eq-l3-elU" secondAttribute="trailing" id="EQW-WX-dzu"/>
-                            <constraint firstItem="fqv-Kh-v99" firstAttribute="top" secondItem="jhs-dg-UTV" secondAttribute="top" constant="24" id="NIR-zo-ux7"/>
-                            <constraint firstItem="jhs-dg-UTV" firstAttribute="trailing" secondItem="D8G-Zg-7Ss" secondAttribute="trailing" constant="28" id="RFn-jg-T0e"/>
-                            <constraint firstItem="0eq-l3-elU" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" id="U3Y-rB-gSj"/>
-                            <constraint firstItem="e4y-k0-yve" firstAttribute="top" secondItem="0eq-l3-elU" secondAttribute="bottom" constant="8" symbolic="YES" id="YG6-xP-qsO"/>
-                            <constraint firstItem="0eq-l3-elU" firstAttribute="top" secondItem="EBG-Et-IE0" secondAttribute="bottom" constant="24" id="brf-2x-0TL"/>
-                            <constraint firstItem="e4y-k0-yve" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" id="fRM-rt-fgr"/>
-                            <constraint firstItem="e4y-k0-yve" firstAttribute="bottom" secondItem="jhs-dg-UTV" secondAttribute="bottom" id="lJK-9p-ow3"/>
-                            <constraint firstItem="D8G-Zg-7Ss" firstAttribute="top" secondItem="jhs-dg-UTV" secondAttribute="top" constant="24" id="mL6-Ba-szA"/>
-                            <constraint firstItem="fqv-Kh-v99" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" constant="24" id="nk4-RH-uay"/>
-                            <constraint firstItem="EBG-Et-IE0" firstAttribute="top" secondItem="fqv-Kh-v99" secondAttribute="bottom" constant="8" id="w2O-rH-bBn"/>
-                            <constraint firstItem="e4y-k0-yve" firstAttribute="trailing" secondItem="jhs-dg-UTV" secondAttribute="trailing" id="yYU-7p-CGY"/>
+                            <constraint firstItem="0eq-l3-elU" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" id="1fM-Nd-O0T"/>
+                            <constraint firstItem="jhs-dg-UTV" firstAttribute="trailing" secondItem="D8G-Zg-7Ss" secondAttribute="trailing" constant="24" id="3Y9-4h-kbw"/>
+                            <constraint firstItem="e4y-k0-yve" firstAttribute="top" secondItem="0eq-l3-elU" secondAttribute="bottom" id="B4K-Xu-mLX"/>
+                            <constraint firstItem="EBG-Et-IE0" firstAttribute="top" secondItem="jhs-dg-UTV" secondAttribute="top" constant="102" id="XnZ-g3-R3P"/>
+                            <constraint firstItem="fqv-Kh-v99" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" constant="24" id="ZTw-aX-Squ"/>
+                            <constraint firstItem="e4y-k0-yve" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" id="ZdA-00-1Q8"/>
+                            <constraint firstItem="0eq-l3-elU" firstAttribute="top" secondItem="EBG-Et-IE0" secondAttribute="bottom" constant="18" id="avT-14-2Zs"/>
+                            <constraint firstItem="EBG-Et-IE0" firstAttribute="leading" secondItem="jhs-dg-UTV" secondAttribute="leading" constant="24" id="eLH-n6-u7x"/>
+                            <constraint firstItem="D8G-Zg-7Ss" firstAttribute="top" secondItem="jhs-dg-UTV" secondAttribute="top" constant="23" id="etL-DH-aep"/>
+                            <constraint firstItem="fqv-Kh-v99" firstAttribute="top" secondItem="jhs-dg-UTV" secondAttribute="top" constant="23" id="oOS-FS-ozS"/>
+                            <constraint firstAttribute="trailing" secondItem="0eq-l3-elU" secondAttribute="trailing" id="oti-6r-Puw"/>
+                            <constraint firstItem="e4y-k0-yve" firstAttribute="bottom" secondItem="jhs-dg-UTV" secondAttribute="bottom" id="sTb-qM-fZX"/>
+                            <constraint firstItem="e4y-k0-yve" firstAttribute="trailing" secondItem="jhs-dg-UTV" secondAttribute="trailing" id="tRz-Dl-NeR"/>
+                            <constraint firstItem="jhs-dg-UTV" firstAttribute="trailing" secondItem="EBG-Et-IE0" secondAttribute="trailing" constant="23" id="vqp-ug-Xqw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jhs-dg-UTV"/>
                     </view>
@@ -242,17 +249,23 @@ e-mail: ccd@alfabank.kiev.ua</string>
                         <barButtonItem key="backBarButtonItem" style="plain" systemItem="edit" id="mjD-p3-ard">
                             <color key="tintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="8DA-5n-Zno">
+                            <connections>
+                                <action selector="share:" destination="A6S-QD-DDk" id="E5X-yM-oTk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="currenciesTableView" destination="e4y-k0-yve" id="3bN-mH-oQt"/>
                         <outlet property="detailsLabel" destination="EBG-Et-IE0" id="20x-6d-dMw"/>
                         <outlet property="logoView" destination="D8G-Zg-7Ss" id="7fQ-Rh-UeD"/>
                         <outlet property="organizationLabel" destination="fqv-Kh-v99" id="Ei0-tf-Cqz"/>
+                        <outlet property="shareButton" destination="8DA-5n-Zno" id="vsS-zT-HYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dy0-Ju-t18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080.8000000000002" y="115.59220389805098"/>
+            <point key="canvasLocation" x="2080.8000000000002" y="115.27093596059113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IA5-w6-JE5">
@@ -276,10 +289,11 @@ e-mail: ccd@alfabank.kiev.ua</string>
             <point key="canvasLocation" x="117.59999999999999" y="116.49175412293854"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.25098039220000001" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
     <resources>
         <image name="Down" width="96" height="96"/>
         <image name="Up" width="96" height="96"/>
-        <image name="star" width="27" height="25"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.slash.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

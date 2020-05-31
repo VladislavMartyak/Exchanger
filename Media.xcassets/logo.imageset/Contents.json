@@ -1,21 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Your App Icon.png",
       "idiom" : "universal",
-      "filename" : "6FCAA599-FDD3-421A-813E-1D6B972DD7D2-1.png",
       "scale" : "1x"
     },
     {
+      "filename" : "Your App Icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Your App Icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

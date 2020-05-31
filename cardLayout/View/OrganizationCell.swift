@@ -28,7 +28,6 @@ class OrganizationCell: UICollectionViewCell {
         phoneLabel.text = organization.phone
         addressLabel.text = organization.address
         
-        print("this is name of '\(organization)'")
 
         if let logo = UIImage(named: organization.title) {
             logoImage.image = logo
@@ -89,8 +88,5 @@ class OrganizationCell: UICollectionViewCell {
         }
     }
     
-    @IBAction func viewDetails(_ sender: Any) {
-        
-    }
     
 }

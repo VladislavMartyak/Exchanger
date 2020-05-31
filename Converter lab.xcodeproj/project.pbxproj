@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C87604124842692007A393A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C87604024842692007A393A /* GoogleService-Info.plist */; };
 		3CC40F20247D66B80073151F /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */; };
 		3CC40F22247D66C70073151F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */; };
 		3D1A686623FC7CD60055260F /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A686523FC7CD60055260F /* UIView+Nib.swift */; };
@@ -25,9 +26,11 @@
 		9040A6271FAE741200D89A53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9040A6261FAE741200D89A53 /* AppDelegate.swift */; };
 		9040A62C1FAE741200D89A53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9040A62A1FAE741200D89A53 /* Main.storyboard */; };
 		9040A6311FAE741200D89A53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9040A62F1FAE741200D89A53 /* LaunchScreen.storyboard */; };
+		D5D1BFD458F223C4A0365A79 /* Pods_Converter_lab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CAB1DC5E5A5AE3072010DD /* Pods_Converter_lab.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C87604024842692007A393A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		3D1A686523FC7CD60055260F /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
@@ -43,11 +46,14 @@
 		6A2DEC6823EF0D2E00702578 /* OrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 		6A2DEC6A23EF100D00702578 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		6A2DEC6C23EF103900702578 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		80CAB1DC5E5A5AE3072010DD /* Pods_Converter_lab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Converter_lab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9040A6231FAE741200D89A53 /* Exchanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exchanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9040A6261FAE741200D89A53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9040A62B1FAE741200D89A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9040A6301FAE741200D89A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9040A6321FAE741200D89A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2C6D6743F00995BDF224BDD /* Pods-Converter lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converter lab.debug.xcconfig"; path = "Target Support Files/Pods-Converter lab/Pods-Converter lab.debug.xcconfig"; sourceTree = "<group>"; };
+		AABA8662269A8C9C9AA99868 /* Pods-Converter lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Converter lab.release.xcconfig"; path = "Target Support Files/Pods-Converter lab/Pods-Converter lab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D1BFD458F223C4A0365A79 /* Pods_Converter_lab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +123,8 @@
 				6A091BA123EF712B00880CE9 /* Media.xcassets */,
 				9040A6251FAE741200D89A53 /* cardLayout */,
 				9040A6241FAE741200D89A53 /* Products */,
+				F1C3C60229F09F72FD1776FB /* Pods */,
+				92F96C80EE0F28C4E40CDA8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,10 +146,28 @@
 				6A2DEC6123EF0CBA00702578 /* Model */,
 				9040A62A1FAE741200D89A53 /* Main.storyboard */,
 				9040A62F1FAE741200D89A53 /* LaunchScreen.storyboard */,
+				3C87604024842692007A393A /* GoogleService-Info.plist */,
 				9040A6321FAE741200D89A53 /* Info.plist */,
 				3CC40F1E247D66910073151F /* Fonts */,
 			);
 			path = cardLayout;
+			sourceTree = "<group>";
+		};
+		92F96C80EE0F28C4E40CDA8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80CAB1DC5E5A5AE3072010DD /* Pods_Converter_lab.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1C3C60229F09F72FD1776FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2C6D6743F00995BDF224BDD /* Pods-Converter lab.debug.xcconfig */,
+				AABA8662269A8C9C9AA99868 /* Pods-Converter lab.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,17 +177,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9040A64B1FAE741300D89A53 /* Build configuration list for PBXNativeTarget "Converter lab" */;
 			buildPhases = (
+				FDCB0B8DDA8397528E619D38 /* [CP] Check Pods Manifest.lock */,
 				9040A61F1FAE741200D89A53 /* Sources */,
 				9040A6201FAE741200D89A53 /* Frameworks */,
 				9040A6211FAE741200D89A53 /* Resources */,
+				FB115C27961D6C0A736548E2 /* [CP] Embed Pods Frameworks */,
+				3C87603D24841FB6007A393A /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Converter lab";
-			packageProductDependencies = (
-			);
 			productName = cardLayout;
 			productReference = 9040A6231FAE741200D89A53 /* Exchanger.app */;
 			productType = "com.apple.product-type.application";
@@ -190,8 +218,6 @@
 				Base,
 			);
 			mainGroup = 9040A61A1FAE741200D89A53;
-			packageReferences = (
-			);
 			productRefGroup = 9040A6241FAE741200D89A53 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9040A6311FAE741200D89A53 /* LaunchScreen.storyboard in Resources */,
+				3C87604124842692007A393A /* GoogleService-Info.plist in Resources */,
 				3CC40F22247D66C70073151F /* Gilroy-Regular.ttf in Resources */,
 				6A091BA223EF712B00880CE9 /* Media.xcassets in Resources */,
 				3D1A686C23FC84610055260F /* OrganizationCell.xib in Resources */,
@@ -216,6 +243,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C87603D24841FB6007A393A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		FB115C27961D6C0A736548E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Converter lab/Pods-Converter lab-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Converter lab/Pods-Converter lab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDCB0B8DDA8397528E619D38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Converter lab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9040A61F1FAE741200D89A53 /* Sources */ = {
@@ -374,9 +465,11 @@
 		};
 		9040A64C1FAE741300D89A53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2C6D6743F00995BDF224BDD /* Pods-Converter lab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = T57NBPPB58;
 				INFOPLIST_FILE = cardLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -389,6 +482,7 @@
 		};
 		9040A64D1FAE741300D89A53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AABA8662269A8C9C9AA99868 /* Pods-Converter lab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
