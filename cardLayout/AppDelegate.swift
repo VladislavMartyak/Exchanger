@@ -1,4 +1,4 @@
-import Firebase
+//import Firebase
 import UIKit
 
 
@@ -14,7 +14,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: greyColor, NSAttributedStringKey.font : UIFont(name: "Gilroy-SemiBold", size: 15)! ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: greyColor, NSAttributedStringKey.font : UIFont(name: "Gilroy-SemiBold", size: 15)! ], for: .focused)
         
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         
         return true
     }

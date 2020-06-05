@@ -2,50 +2,34 @@ import UIKit
 import Network
 import UserNotifications
 import FirebaseCrashlytics
+import Reachability
 
 
 final class OrganizationController: UIViewController {
-    
    
     @IBOutlet weak var organizationsCollectionView: UICollectionView!
     @IBOutlet weak var startButton: UIBarButtonItem!
-    
+
     let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
     
     var arrayTest: [Organization] = []
     let cellIdentifier = "organizationID"
     let url = URL(string: "http://resources.finance.ua/ua/public/currency-cash.json")
-    
+   
     override func viewDidLoad() {
+        
         setUpNavigationBar()
         setupCollectionView()
-        downloadJSON()
         
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            //Reuqest
+        if isInternetConnected() == true {
+            downloadJSON()
+            setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
+        } else {
+            showSimpleAlert(title: "Відсутнє з'єднання з інтернетом", message: "", buttonTitle: "Зрозуміло")
         }
         
-        let content = UNMutableNotificationContent()
-        content.title = "Оновлення курсу валют"
-        content.body = "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!"
-        
-        let date = Date().addingTimeInterval(10)
-        let dateComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
-        
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-        
-        center.add(request) { (error) in
-            //Check
-        }
     }
-    
-    private func setupCollectionView() {
-        organizationsCollectionView.register(cellType: OrganizationCell.self)
-    }
+
     
     // MARK: - Prepare for segue
     
@@ -58,17 +42,18 @@ final class OrganizationController: UIViewController {
         }
     }
     
-    
     @IBAction func showStarredlist(_ sender: Any){
-        let alert = UIAlertController(title: "Чекайте оновлень", message: "Дана функція уже у розробці, тому слідкуйте за новинами, щоб бути першим, хто про це дізнається!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Зрозуміло", style: .default, handler: nil))
-        self.present(alert, animated: true)
+        showSimpleAlert(title: "Чекайте оновлень", message: "Дана функція уже у розробці, тому слідкуйте за новинами, щоб бути першим, хто про це дізнається!", buttonTitle: "Зрозуміло")
     }
 }
 
 //MARK: - Functions
 
 extension OrganizationController{
+    
+    private func setupCollectionView() {
+        organizationsCollectionView.register(cellType: OrganizationCell.self)
+    }
     
     func downloadJSON() {
         guard let dowloadURL = url else { return }
@@ -109,7 +94,6 @@ extension OrganizationController{
     
     func setUpNavigationBar() {
         
-    
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 34)!, NSAttributedString.Key.foregroundColor: greyColor]
     
@@ -120,6 +104,48 @@ extension OrganizationController{
         self.title = "Exchanger"
     }
     
+    func showSimpleAlert(title: String, message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    func setUpNotification(title: String, body: String){
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            //Reuqest
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        
+        let date = Date().addingTimeInterval(10)
+        let dateComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+        
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            //Check
+        }
+    }
+    
+    func isInternetConnected() -> Bool {
+        let reachability = try! Reachability()
+        switch reachability.connection {
+        case .cellular:
+            return true
+        case .wifi:
+            return true
+        case .unavailable:
+            return false
+        default:
+            return false
+        }
+    }
     
     
 }

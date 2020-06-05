@@ -8,5 +8,6 @@ target 'Converter lab' do
 pod 'Firebase/Core'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Analytics'
+pod 'ReachabilitySwift'
 
 end
