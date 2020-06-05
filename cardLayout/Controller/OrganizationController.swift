@@ -17,16 +17,10 @@ final class OrganizationController: UIViewController {
     let url = URL(string: "http://resources.finance.ua/ua/public/currency-cash.json")
    
     override func viewDidLoad() {
-        
         setUpNavigationBar()
         setupCollectionView()
-        
-        if isInternetConnected() == true {
-            downloadJSON()
-            setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
-        } else {
-            showSimpleAlert(title: "Відсутнє з'єднання з інтернетом", message: "", buttonTitle: "Зрозуміло")
-        }
+        setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
+        NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
     }
 
@@ -144,6 +138,15 @@ extension OrganizationController{
             return false
         default:
             return false
+        }
+    }
+    
+    
+    @objc func updateList(){
+        if isInternetConnected() == true {
+            downloadJSON()
+        } else {
+            showSimpleAlert(title: "Відсутнє з'єднання з інтернетом", message: "", buttonTitle: "Зрозуміло")
         }
     }
     
