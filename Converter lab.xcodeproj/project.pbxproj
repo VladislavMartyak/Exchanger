@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5A2D66248AB4120099978F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5A2D65248AB4120099978F /* Onboarding.storyboard */; };
 		3C87604124842692007A393A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C87604024842692007A393A /* GoogleService-Info.plist */; };
 		3CC40F20247D66B80073151F /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */; };
 		3CC40F22247D66C70073151F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C5A2D65248AB4120099978F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		3C5A2D67248ABE4C0099978F /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		3C87604024842692007A393A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */,
+				3C5A2D67248ABE4C0099978F /* Gilroy-Bold.ttf */,
 				3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */,
 			);
 			path = Fonts;
@@ -145,6 +149,7 @@
 				6A2DEC6223EF0CC100702578 /* View */,
 				6A2DEC6123EF0CBA00702578 /* Model */,
 				9040A62A1FAE741200D89A53 /* Main.storyboard */,
+				3C5A2D65248AB4120099978F /* Onboarding.storyboard */,
 				9040A62F1FAE741200D89A53 /* LaunchScreen.storyboard */,
 				3C87604024842692007A393A /* GoogleService-Info.plist */,
 				9040A6321FAE741200D89A53 /* Info.plist */,
@@ -239,6 +244,7 @@
 				3D1A686C23FC84610055260F /* OrganizationCell.xib in Resources */,
 				3CC40F20247D66B80073151F /* Gilroy-SemiBold.ttf in Resources */,
 				9040A62C1FAE741200D89A53 /* Main.storyboard in Resources */,
+				3C5A2D66248AB4120099978F /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
