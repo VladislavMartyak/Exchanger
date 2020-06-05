@@ -107,9 +107,9 @@ extension OrganizationController{
     
     func setUpNotification(title: String, body: String){
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            //Reuqest
-        }
+//        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+//            //Reuqest
+//        }
         
         let content = UNMutableNotificationContent()
         content.title = title

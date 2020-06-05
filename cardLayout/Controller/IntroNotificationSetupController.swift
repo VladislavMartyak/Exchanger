@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class IntroNotificationSetupController: UIViewController {
 
@@ -17,6 +18,7 @@ class IntroNotificationSetupController: UIViewController {
     }
     
     @IBAction func proceedToLocationSetup(_ sender: Any){
+        allowAccessToNotifications()
         if #available(iOS 13.0, *) {
             guard let secondViewController = storyboard?.instantiateViewController(identifier: "IntroLocationSetupController") as? IntroLocationSetupController else { return }
             secondViewController.modalPresentationStyle = .fullScreen
@@ -24,6 +26,16 @@ class IntroNotificationSetupController: UIViewController {
             show(secondViewController, sender: nil)
         } else {
             // Fallback on earlier versions
+        }
+    }
+    
+    func allowAccessToNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if let error = error {
+                // Handle the error here.
+            }
+            // Provisional authorization granted.
         }
     }
 
