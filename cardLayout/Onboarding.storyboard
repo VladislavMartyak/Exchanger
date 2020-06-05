@@ -11,15 +11,15 @@
         <array key="Gilroy-Bold.ttf">
             <string>Gilroy-Bold</string>
         </array>
-        <array key="Gilroy-Regular.ttf">
-            <string>Gilroy-Regular</string>
+        <array key="Gilroy-SemiBold.ttf">
+            <string>Gilroy-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Intro Controller-->
         <scene sceneID="LHh-6s-a5e">
             <objects>
-                <viewController id="i05-iQ-vt7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Intro" id="i05-iQ-vt7" customClass="IntroController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="taw-5t-hs7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,9 @@
                                     <constraint firstAttribute="width" constant="38" id="b9N-GW-JnI"/>
                                 </constraints>
                                 <state key="normal" image="arrowWhite"/>
+                                <connections>
+                                    <action selector="proceedToNotificationSetup:" destination="i05-iQ-vt7" eventType="touchUpInside" id="efg-kH-yNG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -47,20 +50,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0ZG-CH-7N0"/>
                     </view>
+                    <connections>
+                        <segue destination="0eH-Uc-a1R" kind="custom" identifier="toIntroNotificationController" id="Hv1-c8-11u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cj-vv-u2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-162.40000000000001" y="166.99507389162562"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro Notification Setup Controller-->
         <scene sceneID="HF0-R8-bb2">
             <objects>
-                <viewController id="0eH-Uc-a1R" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroNotificationSetupController" id="0eH-Uc-a1R" customClass="IntroNotificationSetupController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AdF-xN-Qcg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLight" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-Hs-8Vp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLight" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-Hs-8Vp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHv-gs-xW6">
@@ -70,27 +76,30 @@
                                     <constraint firstAttribute="width" constant="38" id="xKI-GR-nWb"/>
                                 </constraints>
                                 <state key="normal" image="arrowWhite"/>
+                                <connections>
+                                    <action selector="proceedToLocationSetup:" destination="0eH-Uc-a1R" eventType="touchUpInside" id="Bva-a8-O4a"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="K94-wR-C04">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusMinusLogo" translatesAutoresizingMaskIntoConstraints="NO" id="K94-wR-C04">
                                 <rect key="frame" x="93.666666666666686" y="120" width="188" height="292"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="292" id="R1e-db-8x7"/>
                                     <constraint firstAttribute="width" constant="188" id="x0W-7l-h4k"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заробляйте" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xC-VS-UTX">
-                                <rect key="frame" x="75" y="412" width="225" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Будь в курсі" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xC-VS-UTX">
+                                <rect key="frame" x="75" y="412" width="225" height="49"/>
                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Економте свої кошти за рахунок моніторингу поточного ринку валют" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucs-KB-uRj">
-                                <rect key="frame" x="41.666666666666657" y="500" width="292" height="72"/>
+                                <rect key="frame" x="41.666666666666657" y="501" width="292" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="BlK-jx-JPO"/>
                                     <constraint firstAttribute="width" constant="292" id="ruz-0h-kqx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -112,20 +121,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gOL-mE-aCx"/>
                     </view>
+                    <navigationItem key="navigationItem" id="88M-np-2XW"/>
+                    <connections>
+                        <segue destination="6Au-p0-LGV" kind="custom" identifier="Intro2to3" id="haR-AQ-DQl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLH-vM-yCz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="167"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro Location Setup Controller-->
         <scene sceneID="ney-pZ-pCO">
             <objects>
-                <viewController id="6Au-p0-LGV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroLocationSetupController" id="6Au-p0-LGV" customClass="IntroLocationSetupController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9PR-Ac-Ewa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLight" translatesAutoresizingMaskIntoConstraints="NO" id="e2J-xG-hOh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLight" translatesAutoresizingMaskIntoConstraints="NO" id="e2J-xG-hOh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3M-ZE-Xl4">
@@ -135,27 +148,30 @@
                                     <constraint firstAttribute="width" constant="38" id="Y5e-fJ-nj8"/>
                                 </constraints>
                                 <state key="normal" image="arrowWhite"/>
+                                <connections>
+                                    <action selector="proceedToWelcome:" destination="6Au-p0-LGV" eventType="touchUpInside" id="kV9-df-t0T"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Mfq-2D-gZB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Mfq-2D-gZB">
                                 <rect key="frame" x="93.666666666666686" y="120" width="188" height="292"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="292" id="Gnf-WB-PQf"/>
                                     <constraint firstAttribute="width" constant="188" id="WnZ-Io-7k4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заробляйте" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R8-Ld-zaq">
-                                <rect key="frame" x="75" y="412" width="225" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Економте час" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R8-Ld-zaq">
+                                <rect key="frame" x="59.666666666666657" y="412" width="255.99999999999997" height="49"/>
                                 <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Економте свої кошти за рахунок моніторингу поточного ринку валют" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-Wz-H1f">
-                                <rect key="frame" x="41.666666666666657" y="500" width="292" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш час - найдорожчий ресурс, тому не стійте в чергах, все у вас під рукою" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-Wz-H1f">
+                                <rect key="frame" x="41.666666666666657" y="501" width="292" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="292" id="gTx-Vk-re3"/>
                                     <constraint firstAttribute="height" constant="72" id="iWc-U1-DS8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -177,20 +193,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hWD-sw-gOT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q60-4c-c8j"/>
+                    <connections>
+                        <segue destination="3K7-uc-12h" kind="custom" identifier="Intro3to4" id="SC2-Pk-nb6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bn-EB-r28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1694" y="167"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro Welcome Controller-->
         <scene sceneID="lLh-Py-1C9">
             <objects>
-                <viewController id="3K7-uc-12h" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroWelcomeController" id="3K7-uc-12h" customClass="IntroWelcomeController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pcG-Ny-Ztg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLight" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-yW-w9g">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLight" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-yW-w9g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-pI-GTM">
@@ -200,6 +220,9 @@
                                     <constraint firstAttribute="height" constant="30" id="KfO-kz-e0c"/>
                                 </constraints>
                                 <state key="normal" image="arrowWhite"/>
+                                <connections>
+                                    <action selector="proceedToMainApp:" destination="3K7-uc-12h" eventType="touchUpInside" id="n19-9R-dFX"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="TaK-CO-yG4">
                                 <rect key="frame" x="93.666666666666686" y="120" width="188" height="292"/>
@@ -214,13 +237,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Економте свої кошти за рахунок моніторингу поточного ринку валют" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-9v-9FY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В цьому додатку доступні всі фінансові установи України, тому ви завжди здайте те, що підійде саме вам" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-9v-9FY">
                                 <rect key="frame" x="41.666666666666657" y="500" width="292" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="292" id="Bu9-ER-5tU"/>
                                     <constraint firstAttribute="height" constant="72" id="lPn-gN-mb8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -242,6 +265,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DHM-3V-qdJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="nsC-HM-dan"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldi-Ef-Onu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,5 +277,7 @@
         <image name="backgroundIntroLight" width="1250" height="2706.666748046875"/>
         <image name="backgroundLight" width="625" height="1353.3333740234375"/>
         <image name="dollarLogo" width="950" height="955"/>
+        <image name="plusMinusLogo" width="950" height="955"/>
+        <image name="timeLogo" width="950" height="955"/>
     </resources>
 </document>

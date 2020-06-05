@@ -16,7 +16,7 @@
         <!--Exchanger-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="OrganizationController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrganizationController" id="BYZ-38-t0r" customClass="OrganizationController" customModule="Exchanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,7 +270,7 @@ www.alfabank.ua/ua
         <!--Navigation Controller-->
         <scene sceneID="IA5-w6-JE5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rzY-Ba-O2R" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="rzY-Ba-O2R" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nOz-jt-bBP">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>

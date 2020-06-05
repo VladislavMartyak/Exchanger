@@ -1,4 +1,4 @@
-//import Firebase
+import Firebase
 import UIKit
 
 
@@ -14,10 +14,33 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: greyColor, NSAttributedStringKey.font : UIFont(name: "Gilroy-SemiBold", size: 15)! ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: greyColor, NSAttributedStringKey.font : UIFont(name: "Gilroy-SemiBold", size: 15)! ], for: .focused)
         
-        //FirebaseApp.configure()
+        FirebaseApp.configure()
+        
+        UserDefaults.standard.set(false, forKey: "hasLaunched")
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
+        
+        if launchedBefore{
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewControlleripad: UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+        } else {
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+            let initialViewControlleripad: UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "Intro") as! IntroController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+        }
+        
+        UserDefaults.standard.set(true, forKey: "hasLaunched")
+        
         
         return true
     }
+    
+    
     
 }
 

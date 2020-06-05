@@ -19,6 +19,7 @@ final class OrganizationController: UIViewController {
     override func viewDidLoad() {
         setUpNavigationBar()
         setupCollectionView()
+        downloadJSON()
         setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
@@ -114,7 +115,7 @@ extension OrganizationController{
         content.title = title
         content.body = body
         
-        let date = Date().addingTimeInterval(10)
+        let date = Date().addingTimeInterval(5)
         let dateComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
@@ -145,6 +146,7 @@ extension OrganizationController{
     @objc func updateList(){
         if isInternetConnected() == true {
             downloadJSON()
+            //setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
         } else {
             showSimpleAlert(title: "Відсутнє з'єднання з інтернетом", message: "", buttonTitle: "Зрозуміло")
         }

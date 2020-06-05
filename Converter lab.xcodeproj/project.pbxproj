@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3C5A2D66248AB4120099978F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5A2D65248AB4120099978F /* Onboarding.storyboard */; };
+		3C5A2D69248AF0AF0099978F /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A2D68248AF0AF0099978F /* IntroController.swift */; };
+		3C5A2D71248AFA580099978F /* IntroNotificationSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A2D70248AFA580099978F /* IntroNotificationSetupController.swift */; };
+		3C5A2D73248AFE810099978F /* IntroLocationSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A2D72248AFE810099978F /* IntroLocationSetupController.swift */; };
+		3C5A2D75248AFE960099978F /* IntroWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A2D74248AFE960099978F /* IntroWelcomeController.swift */; };
 		3C87604124842692007A393A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C87604024842692007A393A /* GoogleService-Info.plist */; };
 		3CC40F20247D66B80073151F /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */; };
 		3CC40F22247D66C70073151F /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */; };
@@ -33,6 +37,10 @@
 /* Begin PBXFileReference section */
 		3C5A2D65248AB4120099978F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		3C5A2D67248ABE4C0099978F /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		3C5A2D68248AF0AF0099978F /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
+		3C5A2D70248AFA580099978F /* IntroNotificationSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroNotificationSetupController.swift; sourceTree = "<group>"; };
+		3C5A2D72248AFE810099978F /* IntroLocationSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroLocationSetupController.swift; sourceTree = "<group>"; };
+		3C5A2D74248AFE960099978F /* IntroWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroWelcomeController.swift; sourceTree = "<group>"; };
 		3C87604024842692007A393A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3CC40F1F247D66B80073151F /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		3CC40F21247D66C70073151F /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
@@ -117,6 +125,10 @@
 			children = (
 				6A2DEC6623EF0D0500702578 /* OrganizationController.swift */,
 				6A091BA323EF7E4900880CE9 /* OrganizationDetailedController.swift */,
+				3C5A2D68248AF0AF0099978F /* IntroController.swift */,
+				3C5A2D70248AFA580099978F /* IntroNotificationSetupController.swift */,
+				3C5A2D72248AFE810099978F /* IntroLocationSetupController.swift */,
+				3C5A2D74248AFE960099978F /* IntroWelcomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,13 +336,17 @@
 				6A091B9B23EF5EFF00880CE9 /* Addresses.swift in Sources */,
 				6A2DEC6923EF0D2E00702578 /* OrganizationCell.swift in Sources */,
 				3D1A686823FC7CEB0055260F /* UICollectionView+Reusable.swift in Sources */,
+				3C5A2D75248AFE960099978F /* IntroWelcomeController.swift in Sources */,
 				6A2DEC6D23EF103900702578 /* Currency.swift in Sources */,
 				3D1A686A23FC7D010055260F /* UITableView+Reusable.swift in Sources */,
+				3C5A2D71248AFA580099978F /* IntroNotificationSetupController.swift in Sources */,
 				6A2DEC6723EF0D0500702578 /* OrganizationController.swift in Sources */,
 				6A091BA423EF7E4900880CE9 /* OrganizationDetailedController.swift in Sources */,
 				6A091B9D23EF60A200880CE9 /* SerializationError.swift in Sources */,
 				6A091BA823F05FA100880CE9 /* CurrencyCell.swift in Sources */,
 				6A2DEC6B23EF100D00702578 /* Organization.swift in Sources */,
+				3C5A2D73248AFE810099978F /* IntroLocationSetupController.swift in Sources */,
+				3C5A2D69248AF0AF0099978F /* IntroController.swift in Sources */,
 				3D1A686623FC7CD60055260F /* UIView+Nib.swift in Sources */,
 				9040A6271FAE741200D89A53 /* AppDelegate.swift in Sources */,
 			);
