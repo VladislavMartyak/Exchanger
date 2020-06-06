@@ -16,7 +16,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        UserDefaults.standard.set(false, forKey: "hasLaunched")
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
         
@@ -33,8 +32,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewControlleripad
             self.window?.makeKeyAndVisible()
         }
-        
-        UserDefaults.standard.set(true, forKey: "hasLaunched")
         
         
         return true

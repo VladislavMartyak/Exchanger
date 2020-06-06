@@ -1,5 +1,6 @@
 import UIKit
 import MapKit
+import CoreLocation
 
 class OrganizationCell: UICollectionViewCell {
     
@@ -78,8 +79,10 @@ class OrganizationCell: UICollectionViewCell {
             let destLat = placemark?.location?.coordinate.latitude
             let destLon = placemark?.location?.coordinate.longitude
             
-            let source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 49.8442183, longitude: 24.0262899)))
-            source.name = "You"
+            let locationManager = CLLocationManager()
+            let currentLocation = locationManager.location?.coordinate
+            
+            let source = MKMapItem(placemark: MKPlacemark(coordinate: currentLocation!))
             
             let destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: destLat ?? 0, longitude: destLon ?? 0)))
             destination.name = self.organizationLabel.text ?? "Банк"

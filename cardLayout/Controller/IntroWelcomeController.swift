@@ -23,6 +23,7 @@ class IntroWelcomeController: UIViewController {
             
             initialViewControlleripad.modalPresentationStyle = .fullScreen
             self.present(initialViewControlleripad, animated: true, completion: nil)
+            UserDefaults.standard.set(true, forKey: "hasLaunched")
         } else {
             // Fallback on earlier versions
         }
