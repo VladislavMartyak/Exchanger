@@ -12,21 +12,20 @@ class IntroWelcomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func proceedToMainApp(_ sender: Any){
-        if #available(iOS 13.0, *) {
-            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewControlleripad: UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainViewController: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController")
             
-            initialViewControlleripad.modalPresentationStyle = .fullScreen
-            self.present(initialViewControlleripad, animated: true, completion: nil)
+            mainViewController.modalPresentationStyle = .fullScreen
+            self.present(mainViewController, animated: true, completion: nil)
             UserDefaults.standard.set(true, forKey: "hasLaunched")
-        } else {
-            // Fallback on earlier versions
-        }
+
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
 }

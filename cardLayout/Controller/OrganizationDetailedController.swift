@@ -2,10 +2,6 @@ import UIKit
 
 class OrganizationDetailedController: UIViewController {
     
-    let currencyIndentifier = "currencyID"
-    
-    let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
-    
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var currenciesTableView: UITableView!
     @IBOutlet weak var organizationLabel: UILabel!
@@ -13,11 +9,14 @@ class OrganizationDetailedController: UIViewController {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var org: Organization?
-    
     var currencies: [CurrencyFull] = []
+    
+    let currencyIndentifier = "currencyID"
+    let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpNavigationBar()
         convertCurrencies()
         

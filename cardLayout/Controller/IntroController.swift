@@ -23,5 +23,9 @@ class IntroController: UIViewController {
             // Fallback on earlier versions
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
 }

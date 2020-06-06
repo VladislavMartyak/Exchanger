@@ -10,21 +10,22 @@ final class OrganizationController: UIViewController {
     @IBOutlet weak var organizationsCollectionView: UICollectionView!
     @IBOutlet weak var startButton: UIBarButtonItem!
 
-    let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
-    
     var arrayTest: [Organization] = []
+    
     let cellIdentifier = "organizationID"
     let url = URL(string: "http://resources.finance.ua/ua/public/currency-cash.json")
+    let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
    
     override func viewDidLoad() {
+        
         setUpNavigationBar()
         setupCollectionView()
         downloadJSON()
         setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
     }
-
     
     // MARK: - Prepare for segue
     
@@ -36,6 +37,8 @@ final class OrganizationController: UIViewController {
             newViewController.org = obj
         }
     }
+    
+    // MARK: - IBActions
     
     @IBAction func showStarredlist(_ sender: Any){
         showSimpleAlert(title: "Чекайте оновлень", message: "Дана функція уже у розробці, тому слідкуйте за новинами, щоб бути першим, хто про це дізнається!", buttonTitle: "Зрозуміло")
@@ -50,7 +53,7 @@ extension OrganizationController{
         organizationsCollectionView.register(cellType: OrganizationCell.self)
     }
     
-    func downloadJSON() {
+    private func downloadJSON() {
         guard let dowloadURL = url else { return }
         URLSession.shared.dataTask(with: dowloadURL) {data, urlResponse, error in
             guard let data = data, error == nil, urlResponse != nil else {
@@ -74,7 +77,6 @@ extension OrganizationController{
                 for (key, value) in currencies{
                     if let currencyObject = try? Currency(json: value as! [String : Any]) {
                         organizationObject.currencies[key] = currencyObject
-                        
                     }
                     
                 }
@@ -88,13 +90,7 @@ extension OrganizationController{
     }
     
     func setUpNavigationBar() {
-        
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 34)!, NSAttributedString.Key.foregroundColor: greyColor]
-    
-        } else {
-            // Fallback on earlier versions
-        }
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 34)!, NSAttributedString.Key.foregroundColor: greyColor]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: greyColor]
         self.title = "Exchanger"
     }
@@ -107,10 +103,6 @@ extension OrganizationController{
     
     func setUpNotification(title: String, body: String){
         let center = UNUserNotificationCenter.current()
-//        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-//            //Reuqest
-//        }
-        
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
@@ -142,18 +134,16 @@ extension OrganizationController{
         }
     }
     
-    
     @objc func updateList(){
         if isInternetConnected() == true {
             downloadJSON()
-            //setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
+            setUpNotification(title: "Оновлення курсу валют", body: "Оновилися курси валют, зайдіть у додаток, щоб переглянути їх!")
         } else {
             showSimpleAlert(title: "Відсутнє з'єднання з інтернетом", message: "", buttonTitle: "Зрозуміло")
         }
     }
     
 }
-
 
 
 //MARK: - Extensions

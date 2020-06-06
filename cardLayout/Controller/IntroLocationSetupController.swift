@@ -15,22 +15,16 @@ class IntroLocationSetupController: UIViewController, CLLocationManagerDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func proceedToWelcome(_ sender: Any){
-        
         allowAccessToLocation()
         
-        if #available(iOS 13.0, *) {
-            guard let secondViewController = storyboard?.instantiateViewController(identifier: "IntroWelcomeController") as? IntroWelcomeController else { return }
-            secondViewController.modalPresentationStyle = .fullScreen
-            secondViewController.modalTransitionStyle = .crossDissolve
-            show(secondViewController, sender: nil)
-        } else {
-            // Fallback on earlier versions
-        }
+        guard let secondViewController = storyboard?.instantiateViewController(withIdentifier: "IntroWelcomeController") else { return }
+        secondViewController.modalPresentationStyle = .fullScreen
+        secondViewController.modalTransitionStyle = .crossDissolve
+        show(secondViewController, sender: nil)
+
     }
     
     func allowAccessToLocation(){
@@ -48,6 +42,10 @@ class IntroLocationSetupController: UIViewController, CLLocationManagerDelegate 
            case .authorizedAlways, .authorizedWhenInUse:
            break
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
 }
