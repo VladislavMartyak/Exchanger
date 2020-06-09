@@ -2,18 +2,23 @@ import UIKit
 
 class OrganizationDetailedController: UIViewController {
     
+    
+    // MARK: Outlets
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var currenciesTableView: UITableView!
     @IBOutlet weak var organizationLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    // MARK: Variables
     var org: Organization?
     var currencies: [CurrencyFull] = []
     
+    // MARK: Constants
     let currencyIndentifier = "currencyID"
     let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
     
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +40,7 @@ class OrganizationDetailedController: UIViewController {
         currenciesTableView.dataSource = self
     }
     
+    // MARK: Functions
     func setUpNavigationBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor.white
          self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Gilroy-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: greyColor]
@@ -56,6 +62,7 @@ class OrganizationDetailedController: UIViewController {
         }
     }
     
+    // MARK: Actions
     @IBAction func share (_ sender: Any){
         print("tapped share")
         let items: [Any] = ["\(org?.title ?? "") знаходиться на \(org?.address ?? ""), телефон: \(org?.phone ?? "")"]
@@ -64,7 +71,6 @@ class OrganizationDetailedController: UIViewController {
     }
     
 }
-
 
 extension OrganizationDetailedController: UITableViewDelegate, UITableViewDataSource{
 

@@ -7,15 +7,20 @@ import Reachability
 
 final class OrganizationController: UIViewController {
    
+    // MARK: Outlets
     @IBOutlet weak var organizationsCollectionView: UICollectionView!
     @IBOutlet weak var startButton: UIBarButtonItem!
 
+    
+    // MARK: Variables
     var arrayTest: [Organization] = []
     
+    // MARK: Constants
     let cellIdentifier = "organizationID"
     let url = URL(string: "http://resources.finance.ua/ua/public/currency-cash.json")
     let greyColor: UIColor = UIColor(displayP3Red: 64/255, green: 65/255, blue: 66/255, alpha: 1)
    
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         
         setUpNavigationBar()
@@ -28,7 +33,6 @@ final class OrganizationController: UIViewController {
     }
     
     // MARK: - Prepare for segue
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "organizationInfo" {
             let newViewController = segue.destination as! OrganizationDetailedController
@@ -38,15 +42,13 @@ final class OrganizationController: UIViewController {
         }
     }
     
-    // MARK: - IBActions
-    
+    // MARK: - Actions
     @IBAction func showStarredlist(_ sender: Any){
         showSimpleAlert(title: "Чекайте оновлень", message: "Дана функція уже у розробці, тому слідкуйте за новинами, щоб бути першим, хто про це дізнається!", buttonTitle: "Зрозуміло")
     }
 }
 
 //MARK: - Functions
-
 extension OrganizationController{
     
     private func setupCollectionView() {
@@ -144,9 +146,6 @@ extension OrganizationController{
     }
     
 }
-
-
-//MARK: - Extensions
 
 extension OrganizationController: UICollectionViewDelegate, UICollectionViewDataSource{
     

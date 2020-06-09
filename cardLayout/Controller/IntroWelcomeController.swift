@@ -10,10 +10,12 @@ import UIKit
 
 class IntroWelcomeController: UIViewController {
 
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: Actions
     @IBAction func proceedToMainApp(_ sender: Any){
             let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mainViewController: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController")

@@ -10,11 +10,13 @@ import UIKit
 import UserNotifications
 
 class IntroNotificationSetupController: UIViewController {
-
+    
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: Actions
     @IBAction func proceedToLocationSetup(_ sender: Any){
         allowAccessToNotifications()
 
@@ -25,6 +27,7 @@ class IntroNotificationSetupController: UIViewController {
 
     }
     
+    // MARK: Functions
     func allowAccessToNotifications() {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in

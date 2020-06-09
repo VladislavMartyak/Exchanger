@@ -20,7 +20,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             openViewController(storyboardName: "Onboarding", viewContollerIndetifier: "Intro")
         }
-        
         return true
     }
     

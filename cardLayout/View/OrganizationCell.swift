@@ -4,6 +4,7 @@ import CoreLocation
 
 class OrganizationCell: UICollectionViewCell {
     
+    // MARK: Outlets
     @IBOutlet weak var organizationLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -11,6 +12,7 @@ class OrganizationCell: UICollectionViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     
+    // MARK: Functions
     func setupCell(organization: Organization){
         organizationLabel.text = organization.title
         
@@ -53,6 +55,7 @@ class OrganizationCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
     
+    // MARK: Actions
     @IBAction func openLink(_ sender: Any) {
         if let url = URL(string: "https://finance.ua/ua/") {
             UIApplication.shared.open(url)

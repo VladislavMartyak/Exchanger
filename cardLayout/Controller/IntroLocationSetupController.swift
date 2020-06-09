@@ -11,12 +11,15 @@ import CoreLocation
 
 class IntroLocationSetupController: UIViewController, CLLocationManagerDelegate {
     
+    // MARK: Constants
     let locationManager = CLLocationManager()
 
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: Actions
     @IBAction func proceedToWelcome(_ sender: Any){
         allowAccessToLocation()
         
@@ -27,6 +30,7 @@ class IntroLocationSetupController: UIViewController, CLLocationManagerDelegate 
 
     }
     
+    // MARK: Functions
     func allowAccessToLocation(){
         let locStatus = CLLocationManager.authorizationStatus()
         switch locStatus {

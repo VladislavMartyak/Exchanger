@@ -10,10 +10,12 @@ import UIKit
 
 class IntroController: UIViewController {
 
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: Actions
     @IBAction func proceedToNotificationSetup(_ sender: Any){
         if #available(iOS 13.0, *) {
             guard let secondViewController = storyboard?.instantiateViewController(identifier: "IntroNotificationSetupController") as? IntroNotificationSetupController else { return }
